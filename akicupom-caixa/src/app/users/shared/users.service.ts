@@ -1,3 +1,4 @@
+import { Cupom } from './user';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 
@@ -66,11 +67,11 @@ export class UsersService {
         return this.http.delete(url).map(res => res.text());
     }
 
-    addUser(user) {
+    addUser(user: Cupom) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = JSON.stringify(user);
-        let addpath = "/novo/";
-        return this.http.post(this.urlServico, addpath, body).map(res => res.text());
+        let body = JSON.stringify(Cupom);
+        return this.http.post(this.urlServico + 'novo/' + this.getUser(user.nome) + '/' + this.getUser(user.descricao) + '/' + this.getUser(user.dataValidade) + '/' ,body)
+        .map(res => res.text());
     }
 
     updateUser(user) {
