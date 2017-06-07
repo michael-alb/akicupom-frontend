@@ -1,0 +1,73 @@
+ul li a{
+    color:#FFF;
+    font-size: 13px;
+}
+ul li a:hover{
+    color:#00468C;
+}
+nav{
+    background: #06224B;
+    height: 93px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    border: 0;
+}
+.navbar-brand img{
+   margin-top: -10px;
+   margin-left: 80px;
+}
+.navbar-nav{
+    padding-top: 20px;
+    padding-right: 110px;
+}
+.btn{
+    background: #00468C;
+}
+form{ 
+    padding-top: 10px;
+    padding-left: 45%;
+
+}
+input{
+    top: 50%;
+    left: 50%;
+    min-width: 100px;
+    border-radius: 44px 0px 0px 44px;
+    background-color:#142F54;
+    height: 50px;
+    border: 0px;
+    color: #fff;
+}
+button{
+    min-width: 50px;
+    -webkit-border-radius: 0px 44px 44px 0px;
+    -moz-border-radius: 0px 44px 44px 0px;
+    border-radius: 0px 44px 44px 0px;
+    height: 50px;
+    border: 0;
+    margin-left: -5px;
+}
+.btn-default{
+    background-color:#fff;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #FFF;
+  text-align: center;
+  font-size: 16px;
+}
+:-moz-placeholder { /* Firefox 18- */
+  color: #999;
+  text-align: center;
+  font-size: 16px;
+}

@@ -1,0 +1,19 @@
+  <div class="col-md-12">
+
+     <div class="col-md-4" *ngFor="let user of users">
+      <div class="box-promocao" >
+      <div class="foto-promocao">
+        <img [src]="coverpromo" />
+      </div>
+      <div class="desc-promocao">
+          <h4>{{ user.nome }}</h4>
+          <p>{{ user.descricao }}</p>
+      </div>
+      <a href="#" class="btn btn-primary btn-block"><p>Usar Cupom</p></a>
+      <div class="share-promo">
+        <p>Promoção válida até: {{ user.dataDeValidade }}</p>
+      </div>
+      </div>
+    </div>
+
+  </div>
