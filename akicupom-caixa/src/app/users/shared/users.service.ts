@@ -55,7 +55,8 @@ export class UsersService {
     }
 
     getUser(id) {
-        return this.http.get(this.urlServico + "listacupons").map(res => res.json());
+        let url = this.urlServico + id;
+        return this.http.get(url).map(res => res.json());
     }
 
     getUsers() {

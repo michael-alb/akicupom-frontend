@@ -46,7 +46,7 @@
       <tr *ngFor="let user of users">
         <td>{{ user.nome }}</td>
         <td>{{ user.descricao}}</td>
-        <td>{{ user.datadevalidade}}</td>
+        <td>{{ user.dataValidade}}</td>
         <td>
           <a [routerLink]="['/users', user.id]">
             <i class="material-icons">mode_edit</i>
