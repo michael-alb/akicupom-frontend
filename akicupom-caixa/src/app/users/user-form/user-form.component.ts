@@ -26,7 +26,8 @@ export class UserFormComponent implements OnInit {
     this.form = formBuilder.group({
       nome: [],
       descricao: [],
-      dataValidade: []
+      dataValidade: [],
+      capa: []
     });
   }
 

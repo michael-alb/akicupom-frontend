@@ -68,9 +68,10 @@
 
     <ul class="collection" *ngFor="let user of users">
       <li class="collection-item grey lighten-4">
+        <i class="material-icons">local_offer</i>
         <span class="title"><strong>Cupom:</strong> {{ user.nome }}</span>
-          <p><strong>Descricao:</strong> {{ user.descricao }}</p>
-          <p><strong>Data de Validade:</strong> {{ user.dataValidade }}</p>
+          <p><i class="material-icons">description</i><strong>Descricao:</strong> {{ user.descricao }}</p>
+          <p><i class="material-icons">done</i><strong>Data de Validade:</strong> {{ user.dataValidade }}</p>
 
             <a [routerLink]="['/users', user.id]">
               <i class="material-icons">mode_edit</i>
