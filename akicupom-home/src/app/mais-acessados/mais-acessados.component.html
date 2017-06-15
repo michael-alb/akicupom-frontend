@@ -1,0 +1,20 @@
+<div class="mais-acessados">
+    <blockquote><h5><i class="material-icons">grade</i>  Os cupons mais utilizados!</h5></blockquote>
+    <div class="row">
+      <div class="col s3" *ngFor="let user of users">
+        <div class="card">
+            <div class="card-image">
+              <img src="http://www.2beauty.com.br/blog/wp-content/uploads/2016/05/brindes-that-girl-mais-15-off.png">
+              <span class="card-title">{{ user.nome }}</span>
+            </div>
+            <div class="card-content">
+              <p>{{ user.descricao }}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+      </div>
+    </div>
+
+</div>

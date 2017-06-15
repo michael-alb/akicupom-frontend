@@ -55,7 +55,8 @@ export class UsersService {
     }
 
     getUser(id) {
-        return this.http.get(this.urlServico + "listacupons").map(res => res.json());
+        let url = this.urlServico + id;
+        return this.http.get(url).map(res => res.json());
     }
 
     getUsers() {
@@ -71,6 +72,9 @@ export class UsersService {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let body = JSON.stringify(user);
         return this.http.post(this.urlpost, body).map(res => res.text());
+        return this.http.post(this.urlServico + 'novo/' + user.nome + '/' + user.descricao + '/' + user.dataValidade +
+        '/' + user.capa,body)
+        .map(res => res.json());
     }
 
     updateUser(user) {
