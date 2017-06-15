@@ -5,6 +5,7 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
+import { Cupom } from "app/users/shared/user";
 
 /*@Injectable()
 export class UsersService {
@@ -54,6 +55,7 @@ export class UsersService {
     }
 
     getUser(id) {
+       
         let url = this.urlServico + id;
         return this.http.get(url).map(res => res.json());
     }
@@ -67,11 +69,11 @@ export class UsersService {
         return this.http.delete(url).map(res => res.text());
     }
 
-    addUser(user) {
+    addUser(user:Cupom) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let body = JSON.stringify(user);
-        return this.http.post(this.urlServico + 'novo/' + user.nome + '/' + user.descricao + '/' + user.dataValidade ,body)
-        .map(res => res.json());
+        let addpath = "/novo/";
+        return this.http.post(this.urlServico, addpath, body).map(res => res.text());
     }
 
     updateUser(user) {
