@@ -1,33 +1,41 @@
 <h5>{{ title }}</h5>
 <div class="row">
   <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
-
     <div class="row">
       <div class="input-field col s12">
-        <label class="control-label" for="nome">Nome</label>
-        <input type="text" class="form-control" name="nome" id="nome" [(ngModel)]="user.nome" ngControl="nome">
+        <input id="name" type="text" class="validate"
+               [(ngModel)]="user.nome"
+               [class.invalid]="form.controls['nome'].touched && !form.controls['nome'].valid"
+        >
+        <label for="name"
+               [class.active]="user.nome"
+               data-error="Name is required and needs to contain at least 3 chars">
+          Titulo
+        </label>
       </div>
     </div>
-
     <div class="row">
       <div class="input-field col s12">
-        <label class="control-label" for="nome">Descrição</label>
-        <input type="text" class="form-control" name="descricao" id="descricao" [(ngModel)]="user.descricao" ngControl="descricao">
+        <input id="descricao" type="descricao" class="validate"
+               [(ngModel)]="user.descricao"
+               [class.invalid]="form.controls['descricao'].touched && !form.controls['descricao'].valid">
+        <label for="descricao"
+               [class.active]="user.descricao"
+               data-error="Invalid Email">
+          Descrição
+        </label>
       </div>
     </div>
-
-
     <div class="row">
       <div class="input-field col s12">
-      <label class="control-label" for="nome">Data de Validade</label>
-      <input type="text" class="form-control" name="datadevalidade" id="datadevalidade" [(ngModel)]="user.datadevalidade" ngControl="datadevalidade">
+        <input id="phone" type="text" class="validate"
+               [(ngModel)]="user.dataDeValidade">
+        <label for="dataDeValidade" [class.active]="user.dataDeValidade">Data de Validade</label>
       </div>
     </div>
-    
-    <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
-
-    <button class="btn btn-success"  (click)="addUser()">
-        Cadastrar
+    <button class="btn waves-effect waves-light" type="submit"
+            [disabled]="!form.valid">
+      Cadastrar
     </button>
   </form>
 </div>
