@@ -66,13 +66,14 @@ export class UsersService {
         let url = this.urlServico + 'delete/' + id;
         return this.http.delete(url).map(res => res.text());
     }
+    addUser(user) {
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let body = JSON.stringify(user);
+        return this.http.post(this.urlServico + 'novo/' + user.nome + '/' + user.descricao + '/' + user.dataValidade +
+        '/' + user.capa,body)
+        .map(res => res.json());
+    }
 
-     addUser(user) {
-          let headers = new Headers({ 'Content-Type': 'application/json' });
-          let body = JSON.stringify(user);		         
-      return this.http.post(
-          this.urlServico + 'novo/' + this.getUser(user.nome) + '/' + this.getUser(user.descricao) + '/' + this.getUser(user.dataValidade) + '/' ,body)
-     }
     updateUser(user) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let body = JSON.stringify(user);
