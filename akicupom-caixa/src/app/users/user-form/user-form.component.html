@@ -1,87 +1,68 @@
 <h5>{{ title }}</h5>
 <div class="row">
-  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+  <form materialize class="col s6" [formGroup]="form" (ngSubmit)="save()">
+
     <div class="row">
       <div class="input-field col s12">
-<<<<<<< HEAD
-        <input id="name" type="text" class="validate"
-               [(ngModel)]="user.nome"
-               [class.invalid]="form.controls['nome'].touched && !form.controls['nome'].valid"
-        >
-        <label for="name"
-               [class.active]="user.nome"
-               data-error="Name is required and needs to contain at least 3 chars">
-          Titulo
-        </label>
-=======
         <label class="control-label" for="nome">Nome</label>
         <input type="text" class="form-control" formControlName="nome" id="nome" [(ngModel)]="user.nome" ngControl="nome">
->>>>>>> 10bcfd7e762ade4673b63b36f4e18f9a97d9494b
       </div>
     </div>
+
+    <div class="row">
+     
+        <div class="input-field col s12">
+          <textarea formControlName="descricao" id="descricao" [(ngModel)]="user.descricao" ngControl="descricao" class="materialize-textarea"></textarea>
+          <label for="descricao">Descrição</label>
+        </div>
+   
+    </div>
+
     <div class="row">
       <div class="input-field col s12">
-<<<<<<< HEAD
-        <input id="descricao" type="descricao" class="validate"
-               [(ngModel)]="user.descricao"
-               [class.invalid]="form.controls['descricao'].touched && !form.controls['descricao'].valid">
-        <label for="descricao"
-               [class.active]="user.descricao"
-               data-error="Invalid Email">
-          Descrição
-        </label>
-=======
-        <label class="control-label" for="nome">Descrição</label>
-        <input type="text" class="form-control" formControlName="descricao" id="descricao" [(ngModel)]="user.descricao" ngControl="descricao">
->>>>>>> 10bcfd7e762ade4673b63b36f4e18f9a97d9494b
+          <select>
+            <option value="" disabled selected>Selecione a categoria</option>
+            <option value="1">{{user.categoria}}</option>
+          </select>
+          <label>Selecione a categoria o cupom</label>
       </div>
     </div>
+
+
     <div class="row">
       <div class="input-field col s12">
-<<<<<<< HEAD
-        <input id="phone" type="text" class="validate"
-               [(ngModel)]="user.dataDeValidade">
-        <label for="dataDeValidade" [class.active]="user.dataDeValidade">Data de Validade</label>
-      </div>
-    </div>
-    <button class="btn waves-effect waves-light" type="submit"
-            [disabled]="!form.valid">
-      Cadastrar
-=======
       <label class="control-label" for="nome">Data de Validade</label>
       <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="user.dataValidade" ngControl="dataValidade">
       </div>
     </div>
 
-    <div class="upload-image">
+ <div class="upload-image">
       
       <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
+          <output id="list"></output>
 
-<script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+          <script>
+            function handleFileSelect(evt) {
+              var files = evt.target.files; // FileList object
 
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate.toLocaleDateString(), '</li>');
-    }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
+              // files is a FileList of File objects. List some properties.
+              var output = [];
+              for (var i = 0, f; f = files[i]; i++) {
+                output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                            f.size, ' bytes, last modified: ',
+                            f.lastModifiedDate.toLocaleDateString(), '</li>');
+              }
+              document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+            }
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-</script>
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+          </script>
 
     </div>
-    
-    <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
-
+    <br/>
+    <br/>
     <button class="btn btn-sucess" (click)="addUser()">
         Cadastrar
->>>>>>> 10bcfd7e762ade4673b63b36f4e18f9a97d9494b
     </button>
   </form>
 </div>
