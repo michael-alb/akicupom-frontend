@@ -48,7 +48,6 @@ export class UsersService {
 export class UsersService {
 
     private urlServico: string = "http://localhost:8080/akicupom-web/rest/cupom/";
-    private urlpost: string = "http://localhost:8080/akicupom-web/rest/cupom/novo/";
 
     constructor(private http: Http) {
 
@@ -68,15 +67,12 @@ export class UsersService {
         return this.http.delete(url).map(res => res.text());
     }
 
-    addUser(user) {
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = JSON.stringify(user);
-        return this.http.post(this.urlpost, body).map(res => res.text());
-        return this.http.post(this.urlServico + 'novo/' + user.nome + '/' + user.descricao + '/' + user.dataValidade +
-        '/' + user.capa,body)
-        .map(res => res.json());
-    }
-
+     addUser(user) {
+          let headers = new Headers({ 'Content-Type': 'application/json' });
+          let body = JSON.stringify(user);		         
+      return this.http.post(
+          this.urlServico + 'novo/' + this.getUser(user.nome) + '/' + this.getUser(user.descricao) + '/' + this.getUser(user.dataValidade) + '/' ,body)
+     }
     updateUser(user) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let body = JSON.stringify(user);
