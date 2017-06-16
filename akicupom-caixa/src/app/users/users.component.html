@@ -40,6 +40,7 @@
      <table class="responsive-table striped">
         <thead>
         <tr>
+          <th data-field="name">Código</th>
           <th data-field="name">Cupom</th>
           <th data-field="name">Promoção</th>
           <th data-field="name">Categoria</th>
@@ -51,6 +52,7 @@
 
         <tbody>
           <tr *ngFor="let user of users">
+            <td>{{ user.id }}</td>
             <td>{{ user.nome }}</td>
             <td>{{ user.valor }}</td>
             <td>{{ user.categoria }}</td>

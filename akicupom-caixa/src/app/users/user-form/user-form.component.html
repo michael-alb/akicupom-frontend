@@ -1,6 +1,6 @@
 <h5>{{ title }}</h5>
 <div class="row">
-  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+  <form materialize class="col s6" [formGroup]="form" (ngSubmit)="save()">
 
     <div class="row">
       <div class="input-field col s12">
@@ -10,9 +10,21 @@
     </div>
 
     <div class="row">
+     
+        <div class="input-field col s12">
+          <textarea formControlName="descricao" id="descricao" [(ngModel)]="user.descricao" ngControl="descricao" class="materialize-textarea"></textarea>
+          <label for="descricao">Descrição</label>
+        </div>
+   
+    </div>
+
+    <div class="row">
       <div class="input-field col s12">
-        <label class="control-label" for="nome">Descrição</label>
-        <input type="text" class="form-control" formControlName="descricao" id="descricao" [(ngModel)]="user.descricao" ngControl="descricao">
+          <select>
+            <option value="" disabled selected>Selecione a categoria</option>
+            <option value="1">{{user.categoria}}</option>
+          </select>
+          <label>Selecione a categoria o cupom</label>
       </div>
     </div>
 
@@ -47,6 +59,8 @@
           </script>
 
     </div>
+    <br/>
+    <br/>
     <button class="btn btn-sucess" (click)="addUser()">
         Cadastrar
     </button>
