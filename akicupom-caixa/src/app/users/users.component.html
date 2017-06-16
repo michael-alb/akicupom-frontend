@@ -31,57 +31,44 @@
 
   <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
 
-    <!--<table>
-      <thead>
-      <tr>
-        <th data-field="name">Titulo</th>
-        <th data-field="name">Descrição</th>
-        <th data-field="name">Data de Validade</th>
-        <th data-field="name">Editar</th>
-        <th data-field="name">Deletar</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.nome }}</td>
-        <td>{{ user.descricao}}</td>
-        <td>{{ user.datadevalidade}}</td>
-        <td>
-          <a [routerLink]="['/users', user.id]">
-            <i class="material-icons">mode_edit</i>
-          </a>
-        </td>
-        <td>
-          <a (click)="deleteUser(user)" href="">
-            <i class="material-icons">delete</i>
-          </a>
-        </td>
-      </tr>
-      </tbody>
-    </table>-->
      <br/>
 
     <h5>Últimos cupons</h5>
 
     <br/>
 
-    <ul class="collection" *ngFor="let user of users">
-      <li class="collection-item grey lighten-4">
-        <i class="material-icons">local_offer</i>
-        <span class="title"><strong>Cupom:</strong> {{ user.nome }}</span>
-          <p><i class="material-icons">description</i><strong>Descricao:</strong> {{ user.descricao }}</p>
-          <p><i class="material-icons">done</i><strong>Data de Validade:</strong> {{ user.dataValidade }}</p>
+     <table class="responsive-table striped">
+        <thead>
+        <tr>
+          <th data-field="name">Cupom</th>
+          <th data-field="name">Promoção</th>
+          <th data-field="name">Categoria</th>
+          <th data-field="name">Validade</th>
+          <th data-field="name">Editar</th>
+          <th data-field="name">Deletar</th>
+        </tr>
+        </thead>
 
-            <a [routerLink]="['/users', user.id]">
-              <i class="material-icons">mode_edit</i>
-            </a>
+        <tbody>
+          <tr *ngFor="let user of users">
+            <td>{{ user.nome }}</td>
+            <td>{{ user.valor }}</td>
+            <td>{{ user.categoria }}</td>
+            <td>{{ user.dataDeValidade }}</td>
+            <td>
+              <a [routerLink]="['/users', user.id]">
+                <i class="material-icons">mode_edit</i>
+              </a>
+            </td>
+            <td>
+              <a (click)="deleteUser(user)" href="">
+                <i class="material-icons">delete</i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+    </table>
             
-            <a (click)="deleteUser(user)" href="">
-              <i class="material-icons">delete</i>
-            </a>
-      </li>
-    </ul>
 
     <!--<ul class="pagination">
       <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
