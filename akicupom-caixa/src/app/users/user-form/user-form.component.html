@@ -23,46 +23,32 @@
       <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="user.dataValidade" ngControl="dataValidade">
       </div>
     </div>
-    
-    <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
 
-    <button class="btn btn-sucess" (click)="addUser()">
-        Cadastrar
-    </button>
-  </form>
-</div>
-
-   <!-- <div class="upload-image">
+ <div class="upload-image">
       
       <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
+          <output id="list"></output>
 
-<script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+          <script>
+            function handleFileSelect(evt) {
+              var files = evt.target.files; // FileList object
 
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate.toLocaleDateString(), '</li>');
-    }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
+              // files is a FileList of File objects. List some properties.
+              var output = [];
+              for (var i = 0, f; f = files[i]; i++) {
+                output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                            f.size, ' bytes, last modified: ',
+                            f.lastModifiedDate.toLocaleDateString(), '</li>');
+              }
+              document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+            }
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-</script>
+            document.getElementById('files').addEventListener('change', handleFileSelect, false);
+          </script>
 
     </div>
-    
-    <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
-
-<<<<<<< HEAD
-=======
     <button class="btn btn-sucess" (click)="addUser()">
         Cadastrar
     </button>
->>>>>>> 842f3faa278d3ae7ee866c6393a7fc3586e4ef27
   </form>
 </div>
