@@ -3,4 +3,5 @@ export class Cupom {
   nome: string;
   descricao: string;
   dataValidade: string;
+  capa: string;
 }

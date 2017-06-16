@@ -1,4 +1,4 @@
-  <div class="col-md-12">
+  <!--<div class="col-md-12">
 
      <div class="col-md-4" *ngFor="let user of users">
       <div class="box-promocao" >
@@ -16,4 +16,23 @@
       </div>
     </div>
 
+  </div>-->
+
+    <div class="section" >
+     <blockquote><h5><i class="material-icons">queue</i>  Adicionados recentemente!</h5></blockquote>
+     <div class="row center" >
+        <div class="col s2 m4" *ngFor="let user of users">
+          <div class="card">
+            <div class="card-image">
+              <img src="http://www.2beauty.com.br/blog/wp-content/uploads/2016/05/brindes-that-girl-mais-15-off.png">
+              <span class="card-title">{{ user.nome }}</span>
+            </div>
+            <div class="card-content">
+              <p>{{ user.descricao }}</p>
+            </div>
+            <div class="card-action">
+              <a href="#">This is a link</a>
+            </div>
+          </div>
+        </div>
   </div>

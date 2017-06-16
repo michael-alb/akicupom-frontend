@@ -1,8 +1,36 @@
-<nav>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a routerLink="" class="navbar-brand">Akicupom | Gestor</a>
+    </div>
+    <ul class="nav navbar-nav">
+
+
+      <li class="dropdown">
+        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Cupons
+        <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          <li><a routerLink="/cupons" routerLinkActive="active" href="#">Ultimos Cupons Cadastrados</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Gráficos</a></li>
+      <li><a href="#">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Log out</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!--<nav>
   <div class="nav-wrapper indigo darken-4">
     <a routerLink="" class="brand-logo">Akicupom | Gestor</a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a routerLink="/cupons" routerLinkActive="active">Cupons</a></li>
     </ul>
   </div>
-</nav>
+</nav>-->
