@@ -12,13 +12,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
 import { usersRouting } from "./users/users.routing";
 import { UsersModule } from "./users/users.module";
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
