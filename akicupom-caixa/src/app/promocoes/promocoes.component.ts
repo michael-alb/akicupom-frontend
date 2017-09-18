@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {PromocoesService} from "./shared/promocoes.service";
-import {Promocao} from "./shared/promocao";
+import {PromocoesService} from './shared/promocoes.service';
+import {Promocao} from './shared/promocao';
 
 @Component({
   selector: 'app-promocoes',
@@ -18,15 +18,15 @@ export class PromocoesComponent implements OnInit {
       .subscribe(data => this.promocoes = data);
   }
 
-  deletePromocao(promocao){
-    if (confirm("Tem certeza que deseja remover o cupom ?")) {
-      var index = this.promocoes.indexOf(promocao);
+  deletePromocao(promocao) {
+    if (confirm('Tem certeza que deseja remover o cupom ?')) {
+      const index = this.promocoes.indexOf(promocao);
       this.promocoes.splice(index, 1);
 
       this.promocoesService.deletePromocao(promocao.id)
         .subscribe(null,
           err => {
-            alert("Vocẽ não pode deletar esse cupom!.");
+            alert('Vocẽ não pode deletar esse cupom!.');
             // Revert the view back to its original state
             this.promocoes.splice(index, 0, promocao);
           });
