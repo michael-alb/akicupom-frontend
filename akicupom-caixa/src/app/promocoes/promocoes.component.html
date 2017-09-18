@@ -1,6 +1,6 @@
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
   <a class="btn-floating btn-large waves-effect waves-light green"
-     routerLink="/users/new">
+     routerLink="/promocoes/new">
     <i class="material-icons">add</i>
   </a>
 </div>
@@ -11,7 +11,7 @@
 
   <div class="chip">
     <i class="view_module"></i>
-    Mostrando {{ users.length }} cupons.
+    Mostrando {{ promocoes.length }} promoções.
   </div>
 
   <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
@@ -20,10 +20,10 @@
 
     <ul>
       <li>
-        <a href="#!" class="collection-item"  routerLink="/user/new"><i class="material-icons">add</i>Cadastrar Cupom</a>
+        <a href="#!" class="collection-item"  routerLink="/promocoes/new"><i class="material-icons">add</i>Cadastrar Cupom</a>
       </li>
       <li>
-        <a href="#!" class="collection-item"  routerLink="/user/"><i class="material-icons">done</i>Validar Cupom</a>
+        <a href="#!" class="collection-item"  routerLink="/promocao/"><i class="material-icons">done</i>Validar Cupom</a>
       </li>
     </ul>
 
@@ -66,18 +66,18 @@
 
     <br/>
 
-    <ul class="collection" *ngFor="let user of users">
-      <li class="collection-item grey lighten-4">
+    <ul  *ngFor="let promocao of promocoes">
+      <li>
         <i class="material-icons">local_offer</i>
-        <span class="title"><strong>Cupom:</strong> {{ user.nome }}</span>
-          <p><i class="material-icons">description</i><strong>Descricao:</strong> {{ user.descricao }}</p>
-          <p><i class="material-icons">done</i><strong>Data de Validade:</strong> {{ user.dataValidade }}</p>
+        <span class="title"><strong>Promoção:</strong> {{ promocao.nome }}</span>
+          <p><i class="material-icons">description</i><strong>Descricao:</strong> {{ promocao.descricao }}</p>
+          <p><i class="material-icons">done</i><strong>Data de Validade:</strong> {{ promocao.dataValidade }}</p>
 
-            <a [routerLink]="['/users', user.id]">
+            <a [routerLink]="['/promocao', promocao.id]">
               <i class="material-icons">mode_edit</i>
             </a>
             
-            <a (click)="deleteUser(user)" href="">
+            <a (click)="deletePromocao(promocao)" href="">
               <i class="material-icons">delete</i>
             </a>
       </li>

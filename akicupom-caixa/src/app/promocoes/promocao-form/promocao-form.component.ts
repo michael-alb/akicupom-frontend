@@ -2,26 +2,26 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { Cupom } from '../shared/user';
-import { UsersService } from '../shared/users.service';
+import { Promocao } from '../shared/promocao';
+import { PromocoesService } from '../shared/promocoes.service';
 import { BasicValidators } from '../../shared/basic-validators';
 
 @Component({
-  selector: 'app-user-form',
-  templateUrl: './user-form.component.html',
-  styleUrls: ['./user-form.component.css']
+  selector: 'app-promocao-form',
+  templateUrl: './promocao-form.component.html',
+  styleUrls: ['./promocao-form.component.css']
 })
-export class UserFormComponent implements OnInit {
+export class PromocaoFormComponent implements OnInit {
 
   form: FormGroup;
   title: string;
-  user: Cupom = new Cupom();
+  user: Promocao = new Promocao();
 
   constructor(
     formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
-    private usersService: UsersService
+    private promocoesService: PromocoesService
   ) {
     this.form = formBuilder.group({
       nome: [],
@@ -40,9 +40,9 @@ export class UserFormComponent implements OnInit {
       if (!id)
         return;
 
-      this.usersService.getUser(id)
+      this.promocoesService.getPromocao(id)
         .subscribe(
-          user => this.user = user,
+          promocao => this.promocao = promocao,
           response => {
             if (response.status == 404) {
               this.router.navigate(['Não Encontrado']);
@@ -53,14 +53,14 @@ export class UserFormComponent implements OnInit {
 
   save() {
     var result,
-        userValue = this.form.value;
+        promocaoValue = this.form.value;
 
-    if (userValue.id){
-      result = this.usersService.updateUser(userValue);
+    if (promocaoValue.id){
+      result = this.promocoesService.updatePromocao(promocaoValue);
     } else {
-      result = this.usersService.addUser(userValue);
+      result = this.promocoesService.addPromocao(promocaoValue);
     }
 
-    result.subscribe(data => this.router.navigate(['users']));
+    result.subscribe(data => this.router.navigate(['promocoes']));
   }
 }

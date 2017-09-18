@@ -5,14 +5,14 @@
     <div class="row">
       <div class="input-field col s12">
         <label class="control-label" for="nome">Nome</label>
-        <input type="text" class="form-control" formControlName="nome" id="nome" [(ngModel)]="user.nome" ngControl="nome">
+        <input type="text" class="form-control" formControlName="nome" id="nome" [(ngModel)]="promocao.nome" ngControl="nome">
       </div>
     </div>
 
     <div class="row">
       <div class="input-field col s12">
         <label class="control-label" for="nome">Descrição</label>
-        <input type="text" class="form-control" formControlName="descricao" id="descricao" [(ngModel)]="user.descricao" ngControl="descricao">
+        <input type="text" class="form-control" formControlName="descricao" id="descricao" [(ngModel)]="promocao.descricao" ngControl="descricao">
       </div>
     </div>
 
@@ -20,7 +20,7 @@
     <div class="row">
       <div class="input-field col s12">
       <label class="control-label" for="nome">Data de Validade</label>
-      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="user.dataValidade" ngControl="dataValidade">
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.dataValidade" ngControl="dataValidade">
       </div>
     </div>
 
@@ -50,7 +50,7 @@
     
     <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
 
-    <button class="btn btn-sucess" (click)="addUser()">
+    <button class="btn btn-sucess" (click)="addPromocao()">
         Cadastrar
     </button>
   </form>

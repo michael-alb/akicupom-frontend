@@ -45,7 +45,7 @@ export class UsersService {
 
 
 @Injectable()
-export class UsersService {
+export class PromocoesService {
 
     private urlServico: string = "http://localhost:8080/akicupom-web/rest/cupom/";
 
@@ -53,30 +53,30 @@ export class UsersService {
 
     }
 
-    getUser(id) {
+    getPromocao(id) {
         let url = this.urlServico + id;
         return this.http.get(url).map(res => res.json());
     }
 
-    getUsers() {
+    getPromocoes() {
         return this.http.get(this.urlServico + "listacupons").map(res => res.json());
     }
 
-    deleteUser(id) {
+    deletePromocao(id) {
         let url = this.urlServico + 'delete/' + id;
         return this.http.delete(url).map(res => res.text());
     }
 
-    addUser(user) {
+    addPromocao(promocao) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = JSON.stringify(user);
-        return this.http.post(this.urlServico + 'novo/' + user.nome + '/' + user.descricao + '/' + user.dataValidade ,body)
+        let body = JSON.stringify(promocao);
+        return this.http.post(this.urlServico + 'novo/' + promocao.nome + '/' + promocao.descricao + '/' + promocao.dataValidade ,body)
         .map(res => res.json());
     }
 
-    updateUser(user) {
+    updatePromocao(promocao) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = JSON.stringify(user);
+        let body = JSON.stringify(promocao);
         return this.http.put(this.urlServico, body).map(res => res.text());
     }
 }

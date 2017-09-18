@@ -4,9 +4,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule }  from '@angular/router';
 import { HttpModule }  from '@angular/http';
 
-import { UsersComponent } from './users.component';
-import { UsersService } from './shared/users.service';
-import { UserFormComponent } from './user-form/user-form.component';
+import { PromocoesComponent } from './promocoes.component';
+import { PromocoesService } from './shared/promocoes.service';
+import { PromocaoFormComponent } from './promocao-form/promocao-form.component';
 
 @NgModule({
   imports: [
@@ -17,14 +17,14 @@ import { UserFormComponent } from './user-form/user-form.component';
     HttpModule
   ],
   declarations: [
-    UsersComponent,
-    UserFormComponent
+    PromocoesComponent,
+    PromocaoFormComponent
   ],
   exports: [
-    UsersComponent
+    PromocoesComponent
   ],
   providers: [
-    UsersService
+    PromocoesService
   ]
 })
-export class UsersModule { }
+export class PromocoesModule { }
