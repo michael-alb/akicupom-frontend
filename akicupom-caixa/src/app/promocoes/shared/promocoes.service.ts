@@ -47,7 +47,7 @@ export class UsersService {
 @Injectable()
 export class PromocoesService {
 
-    private urlServico = 'http://localhost:8080/akicupom-web/rest/cupom/';
+    private urlServico: string = 'http://localhost:8080/akicupom-web/rest/promocao/';
 
     constructor(private http: Http) {
 
@@ -59,7 +59,7 @@ export class PromocoesService {
     }
 
     getPromocoes() {
-        return this.http.get(this.urlServico + 'listacupons').map(res => res.json());
+        return this.http.get(this.urlServico + 'listapromocoes').map(res => res.json());
     }
 
     deletePromocao(id) {
@@ -80,5 +80,3 @@ export class PromocoesService {
         return this.http.put(this.urlServico, body).map(res => res.text());
     }
 }
-
-

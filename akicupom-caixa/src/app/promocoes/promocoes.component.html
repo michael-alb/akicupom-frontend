@@ -1,99 +1,60 @@
-<div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
-  <a class="btn-floating btn-large waves-effect waves-light green"
-     routerLink="/promocoes/new">
-    <i class="material-icons">add</i>
-  </a>
-</div>
 
-<div class="row">
+<div class="container-fluid display-table">
+  <div class="row display-table-row">
+      <div class="col-md-10 col-sm-11 display-table-cell v-align">
+          <!--<button type="button" class="slide-toggle">Slide Toggle</button> -->
+          <div class="row">
+              <header>
+                  <div class="chip">
+                      <i class="view_module"></i>
+                      Mostrando {{ promocoes.length }} promoções.
+                    </div>
+              </header>
+          </div>
+          <div class="user-dashboard">
+              <h1>Olá, Usuário </h1>
+              <div class="row">
+                  <div class="col-md-5 col-sm-5 col-xs-12 gutter">
 
-  <br/>
+                      <div class="sales">
+                          <h2>Últimas promoções</h2>
+                      </div>
 
-  <div class="chip">
-    <i class="view_module"></i>
-    Mostrando {{ promocoes.length }} promoções.
-  </div>
+                      <table class="table">
+                        <thead >
+                            <tr>
+                                <th><i>Promoção</i></th>
+                                <th><i>Descricao</i></th>
+                                <th><i>Data de Validade</i></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr  *ngFor="let promocao of promocoes">
+                                <td>{{ promocoes.nome }}</td>
+                                <td>{{ promocao.descricao }}</td>
+                                <td>{{ promocao.dataValidade }}</td>
+                  
+                            </tr>
+                        </tbody>
+                    </table>  
 
-  <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
+                  </div>
+                  <div class="col-md-7 col-sm-7 col-xs-12 gutter">
 
-
-
-    <ul>
-      <li>
-        <a href="#!" class="collection-item"  routerLink="/promocoes/new"><i class="material-icons">add</i>Cadastrar Cupom</a>
-      </li>
-      <li>
-        <a href="#!" class="collection-item"  routerLink="/promocao/"><i class="material-icons">done</i>Validar Cupom</a>
-      </li>
-    </ul>
-
-  </div>
-
-  <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
-
-    <!--<table>
-      <thead>
-      <tr>
-        <th data-field="name">Titulo</th>
-        <th data-field="name">Descrição</th>
-        <th data-field="name">Data de Validade</th>
-        <th data-field="name">Editar</th>
-        <th data-field="name">Deletar</th>
-      </tr>
-      </thead>
-
-      <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.nome }}</td>
-        <td>{{ user.descricao}}</td>
-        <td>{{ user.datadevalidade}}</td>
-        <td>
-          <a [routerLink]="['/users', user.id]">
-            <i class="material-icons">mode_edit</i>
-          </a>
-        </td>
-        <td>
-          <a (click)="deleteUser(user)" href="">
-            <i class="material-icons">delete</i>
-          </a>
-        </td>
-      </tr>
-      </tbody>
-    </table>-->
-     <br/>
-
-    <h5>Últimos cupons</h5>
-
-    <br/>
-
-    <ul  *ngFor="let promocao of promocoes">
-      <li>
-        <i class="material-icons">local_offer</i>
-        <span class="title"><strong>Promoção:</strong> {{ promocao.nome }}</span>
-          <p><i class="material-icons">description</i><strong>Descricao:</strong> {{ promocao.descricao }}</p>
-          <p><i class="material-icons">done</i><strong>Data de Validade:</strong> {{ promocao.dataValidade }}</p>
-
-            <a [routerLink]="['/promocao', promocao.id]">
-              <i class="material-icons">mode_edit</i>
-            </a>
-            
-            <a (click)="deletePromocao(promocao)" href="">
-              <i class="material-icons">delete</i>
-            </a>
-      </li>
-    </ul>
-
-    <!--<ul class="pagination">
-      <li class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-      <li class="active"><a href="#!">1</a></li>
-      <li class="waves-effect"><a href="#!">2</a></li>
-      <li class="waves-effect"><a href="#!">3</a></li>
-      <li class="waves-effect"><a href="#!">4</a></li>
-      <li class="waves-effect"><a href="#!">5</a></li>
-      <li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    </ul>-->
-
-
+                      <div class="sales report">
+                          <h2>Melhores Promoções</h2>
+                      </div>
+                  </div>
+                  <div class="col-md-5">
+                    <div class="header-rightside">
+                        <ul class="list-inline header-top">
+                            <li class="hidden-xs"><a routerLink="/promocoes/new" class="add-project">Nova promoção</a></li>
+                        </ul>
+                    </div>
+                </div>
+              </div>
+          </div>
+      </div>
   </div>
 
 </div>

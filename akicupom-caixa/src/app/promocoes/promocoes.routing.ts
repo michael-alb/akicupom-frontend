@@ -1,7 +1,7 @@
 import { Routes, RouterModule } from '@angular/router';
 
 import { PromocoesComponent } from './promocoes.component';
-import {PromocaoFormComponent} from "./promocao-form/promocao-form.component";
+import {PromocaoFormComponent} from './promocao-form/promocao-form.component';
 
 const promocoesRoutes: Routes = [
   { path: 'promocoes', component: PromocoesComponent, pathMatch: 'full' },

@@ -12,15 +12,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
 import { promocoesRouting } from './promocoes/promocoes.routing';
 import { PromocoesModule } from './promocoes/promocoes.module';
-import { LoginComponent } from './login/login.component';
+
+import { LoginModule } from './login/login.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     DashboardComponent,
-    NotFoundComponent,
-    LoginComponent
+    NotFoundComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -29,7 +29,8 @@ import { LoginComponent } from './login/login.component';
     HttpModule,
     PromocoesModule,
     promocoesRouting,
-    routing
+    routing,
+    LoginModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -15,7 +15,7 @@ export class PromocaoFormComponent implements OnInit {
 
   form: FormGroup;
   title: string;
-  user: Promocao = new Promocao();
+  promocao: Promocao = new Promocao();
 
   constructor(
     formBuilder: FormBuilder,
@@ -51,7 +51,7 @@ export class PromocaoFormComponent implements OnInit {
     });
   }
 
-  save() {
+  addPromocoes() {
     var result,
         promocaoValue = this.form.value;
 

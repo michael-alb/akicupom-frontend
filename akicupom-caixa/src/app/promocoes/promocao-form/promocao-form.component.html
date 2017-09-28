@@ -1,11 +1,11 @@
 <h5>{{ title }}</h5>
 <div class="row">
-  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
+  <form #f = "ngForm" (ngSubmit) = "addPromocoes(f)">
 
     <div class="row">
       <div class="input-field col s12">
-        <label class="control-label" for="nome">Nome</label>
-        <input type="text" class="form-control" formControlName="nome" id="nome" [(ngModel)]="promocao.nome" ngControl="nome">
+        <label class="control-label" for="titulo">Titulo</label>
+        <input type="text" class="form-control" formControlName="titulo" id="titulo" [(ngModel)]="promocao.titulo" ngControl="titulo">
       </div>
     </div>
 
@@ -25,7 +25,7 @@
     </div>
 
     <div class="upload-image">
-      
+
       <input type="file" id="files" name="files[]" multiple />
 <output id="list"></output>
 
@@ -47,11 +47,9 @@
 </script>
 
     </div>
-    
+
     <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
 
-    <button class="btn btn-sucess" (click)="addPromocao()">
-        Cadastrar
-    </button>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
 </div>
