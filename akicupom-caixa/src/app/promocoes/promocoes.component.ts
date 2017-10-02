@@ -9,9 +9,9 @@ import {Promocao} from './shared/promocao';
 })
 export class PromocoesComponent implements OnInit {
 
-  private promocoes: Promocao[] = [];
+  public promocoes: Promocao[] = [];
 
-  constructor(private promocoesService: PromocoesService) { }
+  constructor(public promocoesService: PromocoesService) { }
 
   ngOnInit() {
     this.promocoesService.getPromocoes()

@@ -1,10 +1,11 @@
 export class Promocao {
   id: number;
-  titulo: string;
+  capa: string;
+  dataValidade: string;
   descricao: string;
-  fornecedor: string;
+  nome: string;
+  status: boolean;
+  valor: number;
   categoria: string;
-  precoComDesconto: number;
-  precoOriginal: number;
-  img: string;
+  fornecedor: string;
 }

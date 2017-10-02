@@ -6,45 +6,45 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 
-/*@Injectable()
-export class UsersService {
+@Injectable()
+export class PromocoesService {
 
-  private url: string = "http://localhost:8080/akicupom-web/rest/cupom/";
+  private url : string = 'http://localhost:8080/akicupom-web/rest/akicupom/promocao/';
 
   constructor(private http: Http) { }
 
-  getUsers(){
-    return this.http.get(this.url+"listacupons")
+  getPromocoes() {
+    return this.http.get(this.url + 'lista')
       .map(res => res.json());
   }
 
-  getUser(id){
-    return this.http.get(this.getUserUrl(id))
+  getPromocao(id) {
+    return this.http.get(this.getPromocaoUrl(id))
       .map(res => res.json());
   }
 
-  addUser(user){
-    return this.http.post(this.url, JSON.stringify(user))
+  addPromocao(promocao) {
+    return this.http.post(this.url, JSON.stringify(promocao))
       .map(res => res.json());
   }
 
-  updateUser(user){
-    return this.http.put(this.getUserUrl(user.id), JSON.stringify(user))
+  updatePromocao(promocao) {
+    return this.http.put(this.getPromocaoUrl(promocao.id), JSON.stringify(promocao))
       .map(res => res.json());
   }
 
-  deleteUser(id){
-    return this.http.delete(this.getUserUrl(id))
+  deletePromocao(id) {
+    return this.http.delete(this.getPromocaoUrl(id))
       .map(res => res.json());
   }
 
-  private getUserUrl(id){
-    return this.url + "/" + id;
+  private getPromocaoUrl(id) {
+    return this.url + '/' + id;
   }
-}*/
+}
 
 
-@Injectable()
+/*@Injectable()
 export class PromocoesService {
 
     private urlServico: string = 'http://localhost:8080/akicupom-web/rest/promocao/';
@@ -79,4 +79,4 @@ export class PromocoesService {
         const body = JSON.stringify(promocao);
         return this.http.put(this.urlServico, body).map(res => res.text());
     }
-}
+}*/

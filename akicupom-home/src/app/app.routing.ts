@@ -2,12 +2,11 @@ import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-f
 import { ComoUsarCupomComponent } from './como-usar-cupom/como-usar-cupom.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { ModuleWithProviders } from '@angular/core';
-import { Routes, RouterModule }   from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 import { NotFoundComponent } from './not-found/not-found.component';
-import { UsersComponent } from "./users/users.component";
-import { HomeComponent } from "./home/home.component";
-import { LoginUsuarioComponent } from "./login-usuario/login-usuario.component";
+import { HomeComponent } from './home/home.component';
+import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', component: HomeComponent },

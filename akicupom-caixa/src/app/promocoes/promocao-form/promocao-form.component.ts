@@ -26,8 +26,13 @@ export class PromocaoFormComponent implements OnInit {
     this.form = formBuilder.group({
       nome: [],
       descricao: [],
-      dataValidade: [],
+      datavalidade: [],
+      categoria: [],
+      fornecedor: [],
+      valor: [],
+      status: [],
       capa: []
+
     });
   }
 

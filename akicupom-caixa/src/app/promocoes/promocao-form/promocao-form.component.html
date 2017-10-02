@@ -5,7 +5,7 @@
     <div class="row">
       <div class="input-field col s12">
         <label class="control-label" for="titulo">Titulo</label>
-        <input type="text" class="form-control" formControlName="titulo" id="titulo" [(ngModel)]="promocao.titulo" ngControl="titulo">
+        <input type="text" class="form-control" formControlName="titulo" id="titulo" [(ngModel)]="promocao.nome" ngControl="nome">
       </div>
     </div>
 
@@ -20,36 +20,64 @@
     <div class="row">
       <div class="input-field col s12">
       <label class="control-label" for="nome">Data de Validade</label>
-      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.dataValidade" ngControl="dataValidade">
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.datavalidade" ngControl="datavalidade">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+      <label class="control-label" for="nome">Categoria</label>
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.categoria" ngControl="categoria">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+      <label class="control-label" for="nome">Fornecedor</label>
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.fornecedor" ngControl="fornecedor">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+      <label class="control-label" for="nome">Valor da Promoção</label>
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.valor" ngControl="valor">
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="input-field col s12">
+      <label class="control-label" for="nome">Status da promoção</label>
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.status" ngControl="status">
       </div>
     </div>
 
     <div class="upload-image">
 
       <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
+        <output id="list"></output>
 
-<script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+            <script>
+              function handleFileSelect(evt) {
+                var files = evt.target.files; // FileList object
 
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate.toLocaleDateString(), '</li>');
-    }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
+                // files is a FileList of File objects. List some properties.
+                var output = [];
+                for (var i = 0, f; f = files[i]; i++) {
+                  output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
+                              f.size, ' bytes, last modified: ',
+                              f.lastModifiedDate.toLocaleDateString(), '</li>');
+                }
+                document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+              }
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-</script>
+              document.getElementById('files').addEventListener('change', handleFileSelect, false);
+            </script>
 
     </div>
 
     <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
   </form>
 </div>

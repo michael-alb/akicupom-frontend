@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import {UsersService} from "../users/shared/users.service";
-import {Cupom} from "../users/shared/user";
+import { Promocao } from '../shared/promocoes/promocao';
+import { PromocoesService } from '../shared/promocoes/promocoes.service';
+
 
 @Component({
   selector: 'app-mais-acessados',
@@ -10,16 +11,16 @@ import {Cupom} from "../users/shared/user";
 })
 export class MaisAcessadosComponent implements OnInit {
 
- private users: Cupom[] = [];
-  private coverpromo:string;
+  public promocoes: Promocao[] = [];
+  public coverpromo: string;
 
-  constructor(private usersService: UsersService) {
+  constructor(public promocoesService: PromocoesService) {
     this.coverpromo = 'src/assets/capa-promo.jpg';
    }
 
   ngOnInit() {
-    this.usersService.getUsers()
-      .subscribe(data => this.users = data);
+    this.promocoesService.getPromocoes()
+      .subscribe(data => this.promocoes = data);
   }
 
 }
