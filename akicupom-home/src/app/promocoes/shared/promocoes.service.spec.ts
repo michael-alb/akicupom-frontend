@@ -3,7 +3,7 @@
 import { TestBed, async, inject } from '@angular/core/testing';
 import { PromocoesService } from './promocoes.service';
 
-describe('Service: Promocoes', () => {
+describe('Service: Users', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [PromocoesService]

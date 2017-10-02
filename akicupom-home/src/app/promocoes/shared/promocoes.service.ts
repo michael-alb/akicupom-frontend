@@ -9,12 +9,12 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class PromocoesService {
 
-  private url = 'http://localhost:8080/akicupom-web/rest/akicupom/promocao/';
+  private url: string = 'http://localhost:8080/akicupom-web/rest/akicupom/promocao/';
 
   constructor(private http: Http) { }
 
   getPromocoes() {
-    return this.http.get(this.url + 'listar')
+    return this.http.get(this.url + 'lista')
       .map(res => res.json());
   }
 

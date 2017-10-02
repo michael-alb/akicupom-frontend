@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Promocao } from '../shared/promocoes/promocao';
-import { PromocoesService } from '../shared/promocoes/promocoes.service';
+import { Promocao } from '../promocoes/shared/promocao';
+import { PromocoesService } from '../promocoes/shared/promocoes.service';
 
 
 @Component({
