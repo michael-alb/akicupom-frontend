@@ -1,10 +1,10 @@
 /* tslint:disable:no-unused-variable */
 
 import { addProviders, async, inject } from '@angular/core/testing';
-import {User} from './user';
+import { Promocao } from './promocao';
 
-describe('User', () => {
+describe('Promocao', () => {
   it('should create an instance', () => {
-    expect(new User()).toBeTruthy();
+    expect(new Promocao()).toBeTruthy();
   });
 });

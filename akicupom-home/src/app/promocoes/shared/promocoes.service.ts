@@ -7,36 +7,36 @@ import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 
 @Injectable()
-export class UsersService {
+export class PromocoesService {
 
-    private urlServico: string = "http://localhost:8080/akicupom-web/rest/cupom/";
+    private urlServico: string = 'http://localhost:8080/akicupom-web/rest/akicupom/promocao/';
 
     constructor(private http: Http) {
 
     }
 
-    getUser(id) {
-        return this.http.get(this.urlServico + "listacupons").map(res => res.json());
+    getpromocao(id) {
+        return this.http.get(this.urlServico + 'lista').map(res => res.json());
     }
 
-    getUsers() {
-        return this.http.get(this.urlServico + "listacupons").map(res => res.json());
+    getPromocoes() {
+        return this.http.get(this.urlServico + 'lista').map(res => res.json());
     }
 
-    deleteUser(id) {
+    deletePromocao(id) {
         let url = this.urlServico + 'delete/' + id;
         return this.http.delete(url).map(res => res.text());
     }
 
-    addUser(user) {
+    addPromocao(promocao) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = JSON.stringify(user);
+        let body = JSON.stringify(promocao);
         return this.http.post(this.urlServico, body).map(res => res.text());
     }
 
-    updateUser(user) {
+    updatePromocao(promocao) {
         let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = JSON.stringify(user);
+        let body = JSON.stringify(promocao);
         return this.http.put(this.urlServico, body).map(res => res.text());
     }
 }

@@ -11,7 +11,7 @@
 
   <div class="chip">
     <i class="view_module"></i>
-    Mostrando {{ users.length }} cupons.
+    Mostrando {{ promocoes.length }} cupons.
   </div>
 
   <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
@@ -20,10 +20,10 @@
 
     <ul>
       <li>
-        <a class="collection-item"  routerLink="/user/new"><i class="material-icons">add</i>Cadastrar Cupom</a>
+        <a class="collection-item"  routerLink="/user/new"><i class="material-icons">add</i>Cadastrar promoção</a>
       </li>
       <li>
-        <a href="#!" class="collection-item"  routerLink="/user/"><i class="material-icons">done</i>Validar Cupom</a>
+        <a href="#!" class="collection-item"  routerLink="/user/"><i class="material-icons">done</i>Validar Promoção</a>
       </li>
     </ul>
 
@@ -43,17 +43,17 @@
       </thead>
 
       <tbody>
-      <tr *ngFor="let user of users">
-        <td>{{ user.nome }}</td>
-        <td>{{ user.descricao}}</td>
-        <td>{{ user.dataValidade}}</td>
+      <tr *ngFor="let promocao of promocoes">
+        <td>{{ promocao.nome }}</td>
+        <td>{{ promocao.descricao}}</td>
+        <td>{{ promocao.dataValidade}}</td>
         <td>
-          <a [routerLink]="['/users', user.id]">
+          <a [routerLink]="['/promocoes', promocao.id]">
             <i class="material-icons">mode_edit</i>
           </a>
         </td>
         <td>
-          <a (click)="deleteUser(user)" href="">
+          <a (click)="deletePromocao(promocao)" href="">
             <i class="material-icons">delete</i>
           </a>
         </td>

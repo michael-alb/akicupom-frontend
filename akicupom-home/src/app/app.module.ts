@@ -10,15 +10,14 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
-import { usersRouting } from "./users/users.routing";
-import { UsersModule } from "./users/users.module";
+import { promocoesRouting } from './promocoes/promocoes.routing';
+import { PromocoesModule } from './promocoes/promocoes.module';
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.component';
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { ComoUsarCupomComponent } from './como-usar-cupom/como-usar-cupom.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
-import { MaisAcessadosComponent } from './mais-acessados/mais-acessados.component';
 
 @NgModule({
   declarations: [
@@ -31,16 +30,15 @@ import { MaisAcessadosComponent } from './mais-acessados/mais-acessados.componen
     MenuCategoriaComponent,
     TermosDeUsoComponent,
     ComoUsarCupomComponent,
-    PerguntasFrequentesComponent,
-    MaisAcessadosComponent
+    PerguntasFrequentesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
-    UsersModule,
-    usersRouting,
+    PromocoesModule,
+    promocoesRouting,
     routing
   ],
   providers: [],

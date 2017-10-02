@@ -1,4 +1,4 @@
-export class Cupom {
+export class Promocao {
   id: number;
   nome: string;
   descricao: string;
