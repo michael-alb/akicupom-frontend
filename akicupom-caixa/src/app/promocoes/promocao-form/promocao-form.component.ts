@@ -15,7 +15,7 @@ export class PromocaoFormComponent implements OnInit {
 
   form: FormGroup;
   title: string;
-  promocao: Promocao = new Promocao();
+  user: Promocao = new Promocao();
 
   constructor(
     formBuilder: FormBuilder,
@@ -26,13 +26,8 @@ export class PromocaoFormComponent implements OnInit {
     this.form = formBuilder.group({
       nome: [],
       descricao: [],
-      datavalidade: [],
-      categoria: [],
-      fornecedor: [],
-      valor: [],
-      status: [],
+      dataValidade: [],
       capa: []
-
     });
   }
 
@@ -56,7 +51,7 @@ export class PromocaoFormComponent implements OnInit {
     });
   }
 
-  addPromocoes() {
+  save() {
     var result,
         promocaoValue = this.form.value;
 

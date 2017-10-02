@@ -6,48 +6,48 @@ import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/catch';
 import { Observable } from 'rxjs/Rx';
 
-@Injectable()
-export class PromocoesService {
+/*@Injectable()
+export class UsersService {
 
-  private url : string = 'http://localhost:8080/akicupom-web/rest/akicupom/promocao/';
+  private url: string = "http://localhost:8080/akicupom-web/rest/cupom/";
 
   constructor(private http: Http) { }
 
-  getPromocoes() {
-    return this.http.get(this.url + 'lista')
+  getUsers(){
+    return this.http.get(this.url+"listacupons")
       .map(res => res.json());
   }
 
-  getPromocao(id) {
-    return this.http.get(this.getPromocaoUrl(id))
+  getUser(id){
+    return this.http.get(this.getUserUrl(id))
       .map(res => res.json());
   }
 
-  addPromocao(promocao) {
-    return this.http.post(this.url, JSON.stringify(promocao))
+  addUser(user){
+    return this.http.post(this.url, JSON.stringify(user))
       .map(res => res.json());
   }
 
-  updatePromocao(promocao) {
-    return this.http.put(this.getPromocaoUrl(promocao.id), JSON.stringify(promocao))
+  updateUser(user){
+    return this.http.put(this.getUserUrl(user.id), JSON.stringify(user))
       .map(res => res.json());
   }
 
-  deletePromocao(id) {
-    return this.http.delete(this.getPromocaoUrl(id))
+  deleteUser(id){
+    return this.http.delete(this.getUserUrl(id))
       .map(res => res.json());
   }
 
-  private getPromocaoUrl(id) {
-    return this.url + '/' + id;
+  private getUserUrl(id){
+    return this.url + "/" + id;
   }
-}
+}*/
 
 
-/*@Injectable()
+@Injectable()
 export class PromocoesService {
 
-    private urlServico: string = 'http://localhost:8080/akicupom-web/rest/promocao/';
+    private urlServico = 'http://localhost:8080/akicupom-web/rest/cupom/';
 
     constructor(private http: Http) {
 
@@ -59,7 +59,7 @@ export class PromocoesService {
     }
 
     getPromocoes() {
-        return this.http.get(this.urlServico + 'listapromocoes').map(res => res.json());
+        return this.http.get(this.urlServico + 'listacupons').map(res => res.json());
     }
 
     deletePromocao(id) {
@@ -79,4 +79,6 @@ export class PromocoesService {
         const body = JSON.stringify(promocao);
         return this.http.put(this.urlServico, body).map(res => res.text());
     }
-}*/
+}
+
+

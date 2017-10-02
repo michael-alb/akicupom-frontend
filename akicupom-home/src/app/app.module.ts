@@ -10,6 +10,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { HomeComponent } from './home/home.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { routing } from './app.routing';
+import { usersRouting } from "./users/users.routing";
+import { UsersModule } from "./users/users.module";
 import { MainFooterComponent } from './main-footer/main-footer.component';
 import { LoginUsuarioComponent } from './login-usuario/login-usuario.component';
 import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.component';
@@ -37,6 +39,8 @@ import { MaisAcessadosComponent } from './mais-acessados/mais-acessados.componen
     FormsModule,
     HttpModule,
     AlertModule.forRoot(),
+    UsersModule,
+    usersRouting,
     routing
   ],
   providers: [],

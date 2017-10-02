@@ -79,6 +79,7 @@ class FilterSubscriber<T> extends Subscriber<T> {
               private predicate: (value: T, index: number) => boolean,
               private thisArg: any) {
     super(destination);
+    this.predicate = predicate;
   }
 
   // the try catch block below is left specifically for
