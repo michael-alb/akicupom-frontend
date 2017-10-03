@@ -1,5 +1,34 @@
+.section{
+    margin-top: 130px;
+}
+    
 blockquote{
     background: #f2f2f2;
 }
-.section{
+
+.card{
+    width: 360px;
+    height: auto;
+    margin-left: 23px;
+
+}
+.percent{
+    background: #FDBE34;
+    border: 1px dashed #0B409C;
+    padding: 10px;
+    width: 70px;
+    height: 53px;
+    font-size: 25px;
+    color: #0B409C;
+    float:right;
+}
+.fornecedor{
+    width: 290px;
+    height: 20px;
+    color: #0B409C;
+    clear: left;
+}
+.card-title{
+    clear: both;
+    margin-top: 50px;
 }

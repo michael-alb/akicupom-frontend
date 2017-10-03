@@ -2,5 +2,6 @@
 @import "../node_modules/materialize-css/dist/css/materialize.css";
 
 body{
-    background: url(assets/bg.jpg) repeat;
+    background: #F2F7FF;
+    font-family: 'Roboto', sans-serif;
 }
