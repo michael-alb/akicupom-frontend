@@ -1,57 +1,36 @@
-<h5>{{ title }}</h5>
-<div class="row">
-  <form materialize class="col s12" [formGroup]="form" (ngSubmit)="save()">
 
-    <div class="row">
-      <div class="input-field col s12">
-        <label class="control-label" for="nome">Nome</label>
-        <input type="text" class="form-control" formControlName="nome" id="nome" [(ngModel)]="promocao.nome" ngControl="nome">
+
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+      <div class="form-group">
+        <label for="nome">Titulo da Promoção</label>
+        <input type="text" class="form-control" id="nome" placeholder="Título" name="nome" ngModel>
       </div>
-    </div>
 
-    <div class="row">
-      <div class="input-field col s12">
-        <label class="control-label" for="nome">Descrição</label>
-        <input type="text" class="form-control" formControlName="descricao" id="descricao" [(ngModel)]="promocao.descricao" ngControl="descricao">
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <textarea name="descricao" class="form-control" id="descricao" rows="5" cols="40" placeholder="Descreva sua promoção..." name="descricao" ngModel></textarea>
       </div>
-    </div>
 
+      <div class="form-group">
+          <label for="valor">Valor da Promoção</label>
+          <input type="text" class="form-control" id="valor" placeholder="Valor da promoção" name="valor_promocao" ngModel>
+        </div>
 
-    <div class="row">
-      <div class="input-field col s12">
-      <label class="control-label" for="nome">Data de Validade</label>
-      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" [(ngModel)]="promocao.dataValidade" ngControl="dataValidade">
+      <div class="form-group">
+        <label for="dataValidade">Data de Validade</label>
+        <input type="text" class="form-control" id="dataValidade" placeholder="DD/MM/AAAA" name="dataValidade" ngModel>
       </div>
-    </div>
 
-    <div class="upload-image">
-      
-      <input type="file" id="files" name="files[]" multiple />
-<output id="list"></output>
+      <div class="form-group">
+          <label for="fornecedor">Fornecedor</label>
+          <input type="text" class="form-control" id="fornecedor" placeholder="fornecedor" name="fornecedor" ngModel>
+      </div>
 
-<script>
-  function handleFileSelect(evt) {
-    var files = evt.target.files; // FileList object
+      <div class="form-group">
+      <label for="fornecedor">Categoria</label>
+      <select class="form-control form-control-lg" id="categoria" placeholder="Selecione sua categoria" name="categoria" ngModel><option>Large select</option></select>
+      </div>
 
-    // files is a FileList of File objects. List some properties.
-    var output = [];
-    for (var i = 0, f; f = files[i]; i++) {
-      output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                  f.size, ' bytes, last modified: ',
-                  f.lastModifiedDate.toLocaleDateString(), '</li>');
-    }
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-  }
+      <button type="submit" class="btn btn-primary">Submit</button>
 
-  document.getElementById('files').addEventListener('change', handleFileSelect, false);
-</script>
-
-    </div>
-    
-    <!--<button class="btn waves-effect waves-light" type="submit">Cadastrar</button>-->
-
-    <button class="btn btn-sucess" (click)="addPromocao()">
-        Cadastrar
-    </button>
-  </form>
-</div>
+    </form>

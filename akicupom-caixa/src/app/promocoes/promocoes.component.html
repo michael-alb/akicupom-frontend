@@ -1,6 +1,6 @@
 <div class="fixed-action-btn" style="bottom: 45px; right: 24px;">
   <a class="btn-floating btn-large waves-effect waves-light green"
-     routerLink="/promocoes/new">
+     routerLink="/promocoes/novo">
     <i class="material-icons">add</i>
   </a>
 </div>
@@ -76,7 +76,7 @@
             <a [routerLink]="['/promocao', promocao.id]">
               <i class="material-icons">mode_edit</i>
             </a>
-            
+
             <a (click)="deletePromocao(promocao)" href="">
               <i class="material-icons">delete</i>
             </a>

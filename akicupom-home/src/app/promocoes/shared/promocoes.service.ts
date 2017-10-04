@@ -16,11 +16,11 @@ export class PromocoesService {
     }
 
     getpromocao(id) {
-        return this.http.get(this.urlServico + 'lista').map(res => res.json());
+        return this.http.get(this.urlServico + id).map(res => res.json());
     }
 
     getPromocoes() {
-        return this.http.get(this.urlServico + 'lista').map(res => res.json());
+        return this.http.get(this.urlServico + 'listar').map(res => res.json());
     }
 
     deletePromocao(id) {

@@ -19,6 +19,7 @@ import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { ComoUsarCupomComponent } from './como-usar-cupom/como-usar-cupom.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
