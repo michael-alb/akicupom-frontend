@@ -23,12 +23,26 @@
 
       <div class="form-group">
           <label for="fornecedor">Fornecedor</label>
-          <input type="text" class="form-control" id="fornecedor" placeholder="fornecedor" name="fornecedor" ngModel>
+          <select class="form-control form-control-lg" id="fornecedor" placeholder="Selecione o fornecedor" name="fornecedor" ngModel>
+            <option>Selecione o fornecedor</option>
+            <option *ngFor="let fornecedor of fornecedores">{{fornecedor.nome}}</option>
+          </select>
       </div>
 
       <div class="form-group">
       <label for="fornecedor">Categoria</label>
-      <select class="form-control form-control-lg" id="categoria" placeholder="Selecione sua categoria" name="categoria" ngModel><option>Large select</option></select>
+      <select class="form-control form-control-lg" id="categoria" placeholder="Selecione sua categoria" name="categoria" ngModel>
+        <option>Selecione a categoria</option>
+        <option *ngFor="let categoria of categorias">{{categoria.nome}}</option>
+      </select>
+      </div>
+
+      <div class="form-group">
+        <label for="fornecedor">Status da promoção</label>
+        <select class="form-control form-control-lg" id="status" placeholder="Ativar promoção?" name="status" ngModel>
+          <option>on</option>
+          <option>off</option>
+        </select>
       </div>
 
       <button type="submit" class="btn btn-primary">Submit</button>
