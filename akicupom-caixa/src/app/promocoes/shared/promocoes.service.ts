@@ -14,7 +14,7 @@ export class PromocoesService {
   constructor(private http: Http) { }
 
   getPromocoes(){
-    return this.http.get(this.url+"lista")
+    return this.http.get(this.url+"listar")
       .map(res => res.json());
   }
 
