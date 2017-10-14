@@ -18,6 +18,7 @@ import { MenuCategoriaComponent } from './menu-categoria/menu-categoria.componen
 import { TermosDeUsoComponent } from './termos-de-uso/termos-de-uso.component';
 import { ComoUsarCupomComponent } from './como-usar-cupom/como-usar-cupom.component';
 import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-frequentes.component';
+import { PromocoesService } from 'app/promocoes/shared/promocoes.service';
 
 
 @NgModule({
@@ -42,7 +43,7 @@ import { PerguntasFrequentesComponent } from './perguntas-frequentes/perguntas-f
     promocoesRouting,
     routing
   ],
-  providers: [],
+  providers: [PromocoesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

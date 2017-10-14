@@ -11,14 +11,12 @@ import { PromocaoFormComponent } from './promocao-form/promocao-form.component';
 @NgModule({
   imports: [
     CommonModule,
-    FormsModule,
     ReactiveFormsModule,
     RouterModule,
     HttpModule
   ],
   declarations: [
     PromocoesComponent,
-    PromocaoFormComponent
   ],
   exports: [
     PromocoesComponent

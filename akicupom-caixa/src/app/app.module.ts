@@ -1,6 +1,8 @@
+import { PromocaoFormComponent } from './promocoes/promocao-form/promocao-form.component';
+import { PromocaoFormModule } from './promocoes/promocao-form/promocao-form.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AlertModule } from 'ngx-bootstrap';
@@ -16,6 +18,9 @@ import { routing } from './app.routing';
 import { promocoesRouting } from './promocoes/promocoes.routing';
 import { PromocoesModule } from './promocoes/promocoes.module';
 import { LoginComponent } from './login/login.component';
+import { PromocoesService } from 'app/promocoes/shared/promocoes.service';
+import { CategoriasService } from 'app/promocoes/shared/categorias.service';
+import { FornecedorService } from 'app/promocoes/promocao-form/shared/fornecedor.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +28,8 @@ import { LoginComponent } from './login/login.component';
     NavBarComponent,
     HomeComponent,
     NotFoundComponent,
-    LoginComponent
+    LoginComponent,
+    PromocaoFormComponent
   ],
   imports: [
     AlertModule.forRoot(),
@@ -35,9 +41,11 @@ import { LoginComponent } from './login/login.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
+    PromocaoFormModule,
+    ReactiveFormsModule,
     routing
   ],
-  providers: [],
+  providers: [PromocoesService, CategoriasService, FornecedorService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

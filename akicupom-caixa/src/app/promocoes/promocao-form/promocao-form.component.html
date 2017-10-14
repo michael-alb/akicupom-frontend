@@ -1,50 +1,101 @@
+<form [formGroup]="form" (ngSubmit)="save()" class="form-horizontal">
+  
+  <div class="form-group">
+    
+    <div class="col-sm-12">
+      <label for="nome" class="control-label">Nome</label>
+    </div>
 
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome" [(ngModel)]="promocao.nome" ngControl="nome">
+    </div>
 
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
-      <div class="form-group">
-        <label for="nome">Titulo da Promoção</label>
-        <input type="text" class="form-control" id="nome" placeholder="Título" name="nome" ngModel>
-      </div>
+  </div> 
+  
+  <div class="form-group">
 
-      <div class="form-group">
-        <label for="descricao">Descrição</label>
-        <textarea name="descricao" class="form-control" id="descricao" rows="5" cols="40" placeholder="Descreva sua promoção..." name="descricao" ngModel></textarea>
-      </div>
+    <div class="col-sm-12">
+        <label for="descricao" class="control-label">Descricao</label>
+    </div>
+  
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="descricao" id="descricao" placeholder="Descricao" [(ngModel)]="promocao.descricao" ngControl="descricao">
+    </div>
 
-      <div class="form-group">
-          <label for="valor">Valor da Promoção</label>
-          <input type="text" class="form-control" id="valor" placeholder="Valor da promoção" name="valor_promocao" ngModel>
-        </div>
+  </div>
 
-      <div class="form-group">
-        <label for="dataValidade">Data de Validade</label>
-        <input type="text" class="form-control" id="dataValidade" placeholder="DD/MM/AAAA" name="dataValidade" ngModel>
-      </div>
+  <div class="form-group">
 
-      <div class="form-group">
-          <label for="fornecedor">Fornecedor</label>
-          <select class="form-control form-control-lg" id="fornecedor" placeholder="Selecione o fornecedor" name="fornecedor" ngModel>
-            <option>Selecione o fornecedor</option>
-            <option *ngFor="let fornecedor of fornecedores">{{fornecedor.nome}}</option>
-          </select>
-      </div>
+    <div class="col-sm-12">
+        <label for="valor_promocao" class="control-label">Valor Promocao</label>
+    </div>
+  
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="valor_promocao" id="valor_promocao" placeholder="Valor Promocao" [(ngModel)]="promocao.valor_promocao" ngControl="valor_promocao">
+    </div>
 
-      <div class="form-group">
-      <label for="fornecedor">Categoria</label>
-      <select class="form-control form-control-lg" id="categoria" placeholder="Selecione sua categoria" name="categoria" ngModel>
-        <option>Selecione a categoria</option>
-        <option *ngFor="let categoria of categorias">{{categoria.nome}}</option>
-      </select>
-      </div>
+  </div>
 
-      <div class="form-group">
-        <label for="fornecedor">Status da promoção</label>
-        <select class="form-control form-control-lg" id="status" placeholder="Ativar promoção?" name="status" ngModel>
-          <option>on</option>
-          <option>off</option>
-        </select>
-      </div>
+  <div class="form-group">
+    
+    <div class="col-sm-12">
+        <label for="dataValidade" class="control-label">Data de Validade</label>
+    </div>
+  
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="dataValidade" id="dataValidade" placeholder="Data de Validade" [(ngModel)]="promocao.dataValidade" ngControl="dataValidade">
+    </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+  </div>
 
-    </form>
+  <div class="form-group">
+
+    <div class="col-sm-12">
+        <label for="capa" class="control-label">Capa Imagem</label>
+    </div>
+  
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="capa" id="capa" placeholder="Capa Imagem" [(ngModel)]="promocao.capa" ngControl="capa">
+    </div>
+
+  </div>
+
+  <div class="form-group">
+
+    <div class="col-sm-12">
+        <label for="status" class="control-label">Status</label>
+    </div>
+  
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="status" id="status" placeholder="Status" [(ngModel)]="promocao.status" ngControl="status">
+    </div>
+
+  </div>
+
+  <div class="form-group">
+    
+    <div class="col-sm-12">
+        <label for="categoria" class="control-label">Categoria</label>
+    </div>
+  
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="categoria" id="categoria" placeholder="Categoria" [(ngModel)]="promocao.categoria" ngControl="categoria">
+    </div>
+    
+  </div>
+
+  <div class="form-group">
+    
+    <div class="col-sm-12">
+      <label for="fornecedor" class="control-label">Fornecedor</label>
+    </div>
+      
+    <div class="col-sm-12">
+      <input type="text" class="form-control" formControlName="fornecedor" id="fornecedor" placeholder="Fornecedor" [(ngModel)]="promocao.fornecedor" ngControl="fornecedor">
+    </div>
+    
+  </div>    
+    
+  <button class="btn btn-success" (click)="addPromocao">Enviar</button>
+
+</form>
