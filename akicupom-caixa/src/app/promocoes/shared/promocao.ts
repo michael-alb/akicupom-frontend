@@ -2,7 +2,7 @@ import { Fornecedor } from './../promocao-form/shared/fornecedor';
 import { Categoria } from './../promocao-form/shared/categoria';
 
 export class Promocao {
-  
+
   id: number;
   nome: string;
   descricao: string;
@@ -12,6 +12,4 @@ export class Promocao {
   status: boolean;
   categoria: string;
   fornecedor: string;
-  // categoria: Categoria = new Categoria();
-  // fornecedor: Fornecedor = new Fornecedor();
 }

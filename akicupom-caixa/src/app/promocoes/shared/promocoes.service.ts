@@ -9,19 +9,19 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class PromocoesService {
 
-  private url: string = "http://localhost:8080/akicupom-web/rest/akicupom/promocao/";
+  private url: string = 'http://localhost:8080/akicupom-web/rest/akicupom/promocao/';
 
   constructor(private http: Http) { }
 
-  getPromocoes(){
-    return this.http.get(this.url+ "listar")
+  getPromocoes() {
+    return this.http.get(this.url + 'listar')
     .map(res => res.json());
   }
 
   getPromocao(id){
     return this.http.get(this.getPromocaoUrl(id))
       .map(res => res.json());
-  }  
+  }
 
   addPromocao(promocao) {
     alert('Estou aqui! metodo addPromocao chamado!');
@@ -45,10 +45,6 @@ export class PromocoesService {
   }
 
   private getPromocaoUrl(id){
-    return this.url + "/" + id;
-  }
-
-  private getPromocaoURL(id) {
     return this.url + '/' + id;
   }
 }

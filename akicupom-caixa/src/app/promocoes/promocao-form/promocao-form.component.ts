@@ -28,8 +28,6 @@ export class PromocaoFormComponent implements OnInit {
   promocao: Promocao = new Promocao();
   form: FormGroup;
 
-  private url: string = 'http://localhost:8080/akicupom-web/rest/novo/';
-
   constructor(private http: Http,
     private formBuilder: FormBuilder,
     private promocoesService: PromocoesService,

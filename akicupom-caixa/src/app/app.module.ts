@@ -1,3 +1,4 @@
+import { FormDebugComponent } from './promocoes/form-debug/form-debug.component';
 import { PromocaoFormComponent } from './promocoes/promocao-form/promocao-form.component';
 import { PromocaoFormModule } from './promocoes/promocao-form/promocao-form.module';
 import { BrowserModule } from '@angular/platform-browser';
@@ -29,7 +30,8 @@ import { FornecedorService } from 'app/promocoes/promocao-form/shared/fornecedor
     HomeComponent,
     NotFoundComponent,
     LoginComponent,
-    PromocaoFormComponent
+    PromocaoFormComponent,
+    FormDebugComponent
   ],
   imports: [
     AlertModule.forRoot(),
