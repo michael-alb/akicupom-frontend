@@ -11,5 +11,21 @@
 </head>
 <body>
   <app-root>Carregando Pagina...</app-root>
+
+<!-- linha para conectar ao Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDomRUbFSEMGD4gLf2QTr2JQSBGRu9_18s",
+    authDomain: "adriano-akicupom.firebaseapp.com",
+    databaseURL: "https://adriano-akicupom.firebaseio.com",
+    projectId: "adriano-akicupom",
+    storageBucket: "adriano-akicupom.appspot.com",
+    messagingSenderId: "334395817199"
+  };
+  firebase.initializeApp(config);
+</script>
 </body>
 </html>
